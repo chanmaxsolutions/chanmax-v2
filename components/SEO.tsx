@@ -26,9 +26,9 @@ function SEO({ title, description, image }: TypeSEO) {
 }
 
 SEO.defaultProps = {
-    title: "Chanmax",
-    description: "Building Apps for Startups to Corporates.",
-    image: `${process.env.NEXT_PUBLIC_BASE_URL}/logo.svg`,
+    title: "Chanmax - Modern App Development Company in Sri Lanka",
+    description: "Helps Businesses Build Futuristic Apps",
+    image: `${process.env.NEXT_PUBLIC_BASE_URL}/cover.png`,
 };
 
 export default SEO;
