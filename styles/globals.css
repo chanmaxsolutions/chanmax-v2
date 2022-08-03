@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    @font-face {
+        font-family: "AvenirHeavy";
+        src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Heavy.otf");
+    }
+    @font-face {
+        font-family: "AvenirBold";
+        src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Bold.otf");
+    }
+    @font-face {
+        font-family: "AvenirDemi";
+        src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Demi.otf");
+    }
+    @font-face {
+        font-family: "AvenirMedium";
+        src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Medium.otf");
+    }
+    @font-face {
+        font-family: "Avenir";
+        src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Regular.otf");
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    div {
+        @apply font-Avenir text-dark;
+    }
+
+    .btn {
+        @apply h-[62px] border border-dark bg-dark px-5 py-2 font-AvenirBold text-2xl text-white transition-colors duration-150 md:text-xl lg:text-2xl xl:text-[28px];
+    }
+
+    .btn:hover {
+        @apply border-primary bg-primary text-dark;
+    }
+
+    .btn-red {
+        @apply btn hover:border-[#EE0007] hover:bg-[#EE0007] hover:text-white;
+    }
+
+    .slideBtn {
+        @apply bg-dark p-2 text-white transition-colors duration-300 hover:bg-primary hover:text-dark disabled:opacity-90 disabled:hover:bg-dark disabled:hover:text-white;
+    }
+
+    .header {
+        @apply pt-[23px] pb-[22px] text-dark shadow-[0_1px_0px_#0000000F] xl:px-10;
+    }
+
+    .text_line_img {
+        @apply relative mx-auto w-fit text-dark;
+    }
+
+    .text_line_img::after {
+        content: "";
+        @apply absolute -bottom-4 right-10 h-[15px] w-[232px] bg-[url('/icons/line1.svg')] bg-no-repeat lg:right-0;
+    }
+
+    .text_line_img2 {
+        @apply relative mx-auto w-fit;
+    }
+
+    .text_line_img2::after {
+        content: "";
+        @apply absolute -bottom-4 right-0 h-[15px] w-[232px] bg-[url('/icons/line2.svg')] bg-no-repeat;
+    }
+
+    a {
+        @apply font-AvenirDemi leading-none transition-none hover:text-inherit;
+    }
+
+    .list-icon {
+        @apply space-y-[31px];
+    }
+
+    .list-icon > li {
+        @apply bg-[url('/icons/li-icon.svg')] bg-[length:30.81px_29.63px] bg-no-repeat pl-10 font-AvenirDemi;
+    }
+
+    .form-input {
+        @apply w-full rounded-[10px] border py-3 px-5 text-base transition-colors duration-300 focus:bg-gray-100 focus:outline-none;
+    }
+
+    ::selection {
+        @apply bg-primary text-dark;
+    }
+
+    .form-input {
+        @apply h-[60px] rounded-lg border-2 border-[#E5E7EB] px-[15px] text-base outline-none;
+    }
+    .form-input:focus {
+        @apply border-dark bg-gray-100 ring-0;
+    }
+    .form-input:disabled {
+        @apply bg-gray-50;
+    }
+}
+
+.custom-small-clutch-badge-container {
+    background: #f3f4f6;
+    height: 62px;
+    width: 100% !important;
+    justify-content: center;
+}
+
+.custom-small-clutch-badge-container:hover {
+    background: #e6e6e7;
+}
+
+img {
+    display: unset;
+}
