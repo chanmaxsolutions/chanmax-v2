@@ -43,7 +43,7 @@ export interface TypeReference {
         current: string;
     };
     coverImage: {};
-    mainImage: {};
+    mainImage: string;
     shortDescription: string;
     body: any;
     customerName: string;

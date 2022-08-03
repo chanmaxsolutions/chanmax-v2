@@ -7,7 +7,7 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function BlogSinglePage({ title, mainImage, body }: TypeReference) {
     return (
-        <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`} image={urlFor(mainImage).url()}>
+        <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`} image={mainImage}>
             <div className="mx-auto mt-[100px] max-w-5xl px-3 lg:px-0">
                 <ScrollBottomToTop>
                     <h1 className="mb-[50px] font-[AvenirBold] text-[30px] leading-[50px] lg:text-[50px]">{title}</h1>
@@ -87,6 +87,8 @@ export const getStaticProps = async ({ params }: any) => {
     const data = await sanityClient.fetch(query, {
         slug: params?.slug,
     });
+
+    data.mainImage = urlFor(data.mainImage).url();
 
     if (!data) {
         return {
