@@ -6,7 +6,10 @@ import { ScrollBottomToTop } from "../utils/framerAnimation";
 
 export default function Contact() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Contact us - We are always Here to Hear you and Answer your Queries."
+            description="Send us an email at any time with questions about general matters or sales, and we will get back to you."
+        >
             <Hero
                 heading="We are always Here to Hear you and Answer your Queries."
                 para="Send us an email at any time with questions about general matters or sales, and we will get back to you."

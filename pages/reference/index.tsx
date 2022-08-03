@@ -6,7 +6,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function Reference({ data }: any) {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Reference - Look at some of the Solutions we Provided in a Calendar Year."
+            description="We have provided tech solutions for more than 20 businesses in the last year."
+        >
             <Hero
                 heading="Look at some of the Solutions we Provided in a Calendar Year."
                 para="We have provided tech solutions for more than 20 businesses in the last year."

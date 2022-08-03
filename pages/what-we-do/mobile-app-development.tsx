@@ -8,7 +8,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function MobileAppDevelopment() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Mobile App Development - Elevate your Digital Heritage with world-class, agile Mobile Apps."
+            description="We are a skilled company devoted to developing custom mobile apps that provide results."
+        >
             <Hero
                 heading="Elevate your Digital Heritage with world-class, agile Mobile Apps."
                 para="We are a skilled company devoted to developing custom mobile apps that provide results."

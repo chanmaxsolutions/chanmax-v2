@@ -7,7 +7,7 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function BlogSinglePage({ title, mainImage, body }: TypeReference) {
     return (
-        <MainLayout>
+        <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
             <div className="mx-auto mt-[100px] max-w-5xl px-3 lg:px-0">
                 <ScrollBottomToTop>
                     <h1 className="mb-[50px] font-[AvenirBold] text-[30px] leading-[50px] lg:text-[50px]">{title}</h1>

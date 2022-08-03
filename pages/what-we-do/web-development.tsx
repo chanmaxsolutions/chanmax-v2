@@ -8,7 +8,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function WebDevelopment() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Web Development - Build your brand's potential with Customized Web Apps."
+            description="Our team can help you build your company by developing cutting-edge web apps."
+        >
             <Hero
                 heading="Build your brand's potential with Customized Web Apps."
                 para="Our team can help you build your company by developing cutting-edge web apps."

@@ -8,7 +8,7 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function Blog({ blogs, featuredBlog }: any) {
     return (
-        <MainLayout>
+        <MainLayout title="Blog - Chanmax" description="Blog - Chanmax">
             <div className="mx-auto mt-[100px] max-w-3xl overflow-hidden rounded-[10px] bg-[#F8F8F8] px-3 lg:px-0">
                 <ScrollBottomToTop>
                     <Link href={`/blog/${featuredBlog?.slug.current}`}>

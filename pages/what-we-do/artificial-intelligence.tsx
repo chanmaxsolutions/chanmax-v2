@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlinePlus } from "react-icons/hi";
 import WebAppCard from "../../components/Cards/WebAppCard";
-import WebAppTechCard from "../../components/Cards/WebAppTechCard";
 import Hero from "../../components/Pages/Hero";
 import MainLayout from "../../layouts/Main";
 import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function ArtificialIntelligence() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Artificial Intelligence - Let's Change the Future of your Business with the AI Revolution."
+            description="We are ready to fuel your transition to the next level with future-proof intelligent solutions."
+        >
             <Hero
                 heading="Let's Change the Future of your Business with the AI Revolution."
                 para="We are ready to fuel your transition to the next level with future-proof intelligent solutions."

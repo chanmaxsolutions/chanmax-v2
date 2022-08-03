@@ -3,7 +3,7 @@ import { OpacityFramer, ScrollBottomToTop, TopToBottomFramer } from "../utils/fr
 
 export default function PrivacyPolicy() {
     return (
-        <MainLayout>
+        <MainLayout title="Privacy Policy" description="Privacy Policy for Chanmax Technologies.">
             <div className="bg-primary py-[27px]">
                 <OpacityFramer>
                     <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">

@@ -6,7 +6,10 @@ import { OpacityFramer, ScrollBottomToTop } from "../utils/framerAnimation";
 
 export default function Approch() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="How we do it - Our Software Development Method is Simplified and Efficient."
+            description="The way we develop software is designed to give solutions to the highest satisfaction."
+        >
             <Hero
                 heading="Our Software Development Method is Simplified and Efficient."
                 para="The way we develop software is designed to give solutions to the highest satisfaction."

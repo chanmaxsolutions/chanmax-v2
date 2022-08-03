@@ -1,6 +1,5 @@
 import Image from "next/image";
 import PortableText from "react-portable-text";
-import { motion } from "framer-motion";
 import MainLayout from "../../layouts/Main";
 import { sanityClient, urlFor } from "../../sanity";
 import { TypeReference } from "../../typing";
@@ -16,7 +15,7 @@ export default function ReferenceSinglePage({
     customerFeedback,
 }: TypeReference) {
     return (
-        <MainLayout>
+        <MainLayout title={`Reference - ${title}`} description={title}>
             <div className="bg-primary py-[27px] selection:bg-dark selection:text-white">
                 <OpacityFramer>
                     <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">

@@ -8,7 +8,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function UIUXDesigning() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="UIUX designing - Visually Appealing Interfaces and powerful User Experiences."
+            description="We apply critical design thinking to build human-centric, user-friendly products that capture the market."
+        >
             <Hero
                 heading="Visually Appealing Interfaces and powerful User Experiences."
                 para="We apply critical design thinking to build human-centric, user-friendly products that capture the market."

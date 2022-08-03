@@ -8,7 +8,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function TechnologyConsulting() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Talent Outsourcing - Hire our Smart Virtual Tech Crew to Smoothly Sync up with your Team."
+            description="Our creative thinkers give your story a voice and help you build a magnetic presence to increase visibility."
+        >
             <Hero
                 heading="Hire our Smart Virtual Tech Crew to Smoothly Sync up with your Team."
                 para="Our creative thinkers give your story a voice and help you build a magnetic presence to increase visibility."

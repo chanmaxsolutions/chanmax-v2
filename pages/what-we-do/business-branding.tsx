@@ -8,7 +8,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function WebDevelopment() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Web Development - Authenticate your Legacy and Position your Brand to stand out"
+            description="Our creative thinkers give your story a voice and help you build a magnetic presence to increase visibility."
+        >
             <Hero
                 heading="Authenticate your Legacy and Position your Brand to stand out"
                 para="Our creative thinkers give your story a voice and help you build a magnetic presence to increase visibility."

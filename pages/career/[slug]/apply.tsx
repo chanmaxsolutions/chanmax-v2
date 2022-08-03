@@ -45,7 +45,7 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}>
-            <MainLayout>
+            <MainLayout title={`Career - ${title}`} description={title}>
                 <div className="bg-primary py-[27px] selection:bg-dark selection:text-white">
                     <OpacityFramer>
                         <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">

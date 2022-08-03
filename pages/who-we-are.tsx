@@ -9,7 +9,10 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Who We Are - Our Goal is to Help our Customers Achieve Long-term Success"
+            description="We build future-proof applications that make you stand out as the best option on the market."
+        >
             <Hero
                 heading="Our Goal is to Help our Customers Achieve Long-term Success"
                 para="We build future-proof applications that make you stand out as the best option on the market."

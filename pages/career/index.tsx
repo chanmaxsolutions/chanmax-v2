@@ -6,7 +6,10 @@ import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
 export default function Reference({ data }: any) {
     return (
-        <MainLayout>
+        <MainLayout
+            title="Career - Career Opportunities for Passionate Learners and Leaders."
+            description="Have a passion for technology and being part of an innovative team? Join Chanmax."
+        >
             <Hero
                 heading="Career Opportunities for Passionate Learners and Leaders."
                 para="Have a passion for technology and being part of an innovative team? Join Chanmax."
@@ -19,6 +22,8 @@ export default function Reference({ data }: any) {
                     {data.map((career: any) => (
                         <CareerCard {...career} />
                     ))}
+
+                    {data.length === 0 && <div className="text-center text-6xl">No any positions available</div>}
                 </div>
             </ScrollBottomToTop>
         </MainLayout>
