@@ -1,4 +1,6 @@
 import { table, getMinifiedItem } from "../../utils/AirtableLead";
+import verifyCaptcha from "../../utils/verifyCaptcha";
+import requestIp from "request-ip";
 
 export default async (req, res) => {
     const fields = {
@@ -10,11 +12,18 @@ export default async (req, res) => {
         Email: req.body["Email"],
         Name: req.body["Name"],
     };
-    try {
-        const newRecords = await table.create([{ fields }]);
-        res.status(200).json(getMinifiedItem(newRecords[0]));
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ msg: "Something went wrong! 😕" });
-    }
+
+    const ip = requestIp.getClientIp(req);
+    console.log(ip, "ip");
+    res.json({ ip });
+
+    // try {
+    //     const response = await verifyCaptcha(req.body["captcha"], req.headers["x-forwarded-for"]);
+    //     if (!response) throw new Error("Captcha verification failed");
+    //     const newRecords = await table.create([{ fields }]);
+    //     res.status(200).json(getMinifiedItem(newRecords[0]));
+    // } catch (error) {
+    //     // console.log(error);
+    //     res.status(500).json({ msg: "Something went wrong! 😕" });
+    // }
 };
