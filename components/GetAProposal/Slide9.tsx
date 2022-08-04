@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { union } from "lodash";
 import { HiArrowRight, HiExclamation } from "react-icons/hi";
 import { HoverScaleFramer, TopToBottomFramer } from "../../utils/framerAnimation";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const appTypes = [
     "Android App",
@@ -16,8 +17,19 @@ const appTypes = [
 const romanNumbers = ["I", "II", "III", "IV", "V", "VI", "VII"];
 
 export default function Slide9({ handleNext, quotation, setQuotation, setStep }: any) {
+    const { executeRecaptcha } = useGoogleReCaptcha();
     const [error, setError] = useState(false);
     const [selectedApp, setSelectedApp] = useState<any>(quotation.Modules || []);
+
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) return "";
+
+        await executeRecaptcha();
+    }, []);
+
+    useEffect(() => {
+        handleReCaptchaVerify();
+    }, [handleReCaptchaVerify]);
 
     const handleToggle = (app: any) => {
         setError(false);
@@ -32,6 +44,24 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
         }
     };
 
+    const submitForm = useCallback(() => {
+        if (!executeRecaptcha) return;
+        executeRecaptcha().then((captcha) => {
+            const submitData = { ...quotation, captcha };
+            fetch("/api/lead", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(submitData),
+            })
+                .then((res) => res.json())
+                .then(() => handleNext())
+                .catch((err) => console.log(err));
+        });
+    }, [executeRecaptcha]);
+
     const onSubmit = () => {
         if (selectedApp.length === 0) return setError(true);
         if (!quotation.Name) return setStep(2);
@@ -41,17 +71,7 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
         if (!quotation["Project Description"]) return setStep(7);
         if (quotation.Services?.length === 0) return setStep(8);
 
-        fetch("/api/lead", {
-            method: "POST",
-            headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(quotation),
-        })
-            .then((res) => res.json())
-            .then((res) => handleNext())
-            .catch((err) => console.log(err));
+        submitForm();
     };
 
     return (

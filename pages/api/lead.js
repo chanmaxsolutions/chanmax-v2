@@ -13,17 +13,18 @@ export default async (req, res) => {
         Name: req.body["Name"],
     };
 
-    const ip = requestIp.getClientIp(req);
-    console.log(ip, "ip");
-    res.json({ ip });
+    try {
+        const ip = requestIp.getClientIp(req);
 
-    // try {
-    //     const response = await verifyCaptcha(req.body["captcha"], req.headers["x-forwarded-for"]);
-    //     if (!response) throw new Error("Captcha verification failed");
-    //     const newRecords = await table.create([{ fields }]);
-    //     res.status(200).json(getMinifiedItem(newRecords[0]));
-    // } catch (error) {
-    //     // console.log(error);
-    //     res.status(500).json({ msg: "Something went wrong! 😕" });
-    // }
+        const response = await verifyCaptcha(req.body["captcha"], ip);
+
+        if (!response) throw new Error("Captcha verification failed");
+
+        const newRecords = await table.create([{ fields }]);
+
+        res.status(200).json(getMinifiedItem(newRecords[0]));
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Something went wrong! 😕" });
+    }
 };

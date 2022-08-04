@@ -1,4 +1,6 @@
 import { table, getMinifiedItem } from "../../utils/AirtableCareer";
+import verifyCaptcha from "../../utils/verifyCaptcha";
+import requestIp from "request-ip";
 
 export default async (req, res) => {
     const fields = {
@@ -13,7 +15,14 @@ export default async (req, res) => {
         WhatsApp: req.body["WhatsApp"],
     };
     try {
+        const ip = requestIp.getClientIp(req);
+
+        const response = await verifyCaptcha(req.body["captcha"], ip);
+
+        if (!response) throw new Error("Captcha verification failed");
+
         const newRecords = await table.create([{ fields }]);
+
         res.status(200).json(getMinifiedItem(newRecords[0]));
     } catch (error) {
         console.log(error);

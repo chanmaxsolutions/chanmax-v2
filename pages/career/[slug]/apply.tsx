@@ -1,4 +1,4 @@
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,6 +9,7 @@ import { sanityClient } from "../../../sanity";
 import { TypeCareer } from "../../../typing";
 import { OpacityFramer, TopToBottomFramer } from "../../../utils/framerAnimation";
 import { useRouter } from "next/router";
+import { useCallback, useEffect } from "react";
 
 const schema = yup.object().shape({
     "Applied Job": yup.string(),
@@ -23,6 +24,7 @@ const schema = yup.object().shape({
 });
 
 export default function ApplyCareer({ title, category, type, level }: TypeCareer) {
+    const { executeRecaptcha } = useGoogleReCaptcha();
     const { asPath } = useRouter();
     const {
         register,
@@ -30,18 +32,32 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
         formState: { errors, isSubmitting, isSubmitSuccessful },
     } = useForm({ resolver: yupResolver(schema) });
 
-    const onSubmit = (data: any) => {
-        fetch("/api/career", {
-            method: "POST",
-            headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .catch((err) => console.log(err));
-    };
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) return "";
+
+        await executeRecaptcha();
+    }, []);
+
+    useEffect(() => {
+        handleReCaptchaVerify();
+    }, [handleReCaptchaVerify]);
+
+    const onSubmit = useCallback((data: any) => {
+        if (!executeRecaptcha) return;
+        executeRecaptcha().then((captcha) => {
+            const submitData = { ...data, captcha };
+            fetch("/api/career", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(submitData),
+            })
+                .then((res) => res.json())
+                .catch((err) => console.log(err));
+        });
+    }, []);
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}>
