@@ -96,6 +96,6 @@ export const getStaticProps = async ({ params }: any) => {
 
     return {
         props: { ...data },
-        revalidate: 300, // after 300 seconds updated the old cached version
+        revalidate: 15
     };
 };
