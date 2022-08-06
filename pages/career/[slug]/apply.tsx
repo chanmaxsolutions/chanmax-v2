@@ -3,11 +3,11 @@ import MainLayout from "../../../layouts/Main";
 import { sanityClient } from "../../../sanity";
 import ApplicationForm from "../../../components/career/applicationForm";
 
-export default function ApplyCareer({ title, category, type, level }: any) {
+export default function ApplyCareer(career: any) {
     return (
-        <MainLayout title={`Career - ${title}`} description={title}>
+        <MainLayout title={`Career - ${career.title}`} description={career.title}>
             <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}>
-                <ApplicationForm {...{ title, category, type, level }} />
+                <ApplicationForm {...career} />
             </GoogleReCaptchaProvider>
         </MainLayout>
     );

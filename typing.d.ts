@@ -54,7 +54,7 @@ export interface TypeReference {
 
 export interface TypeCareer {
     title: string;
-    slug?: {
+    slug: {
         current: string;
     };
     shortDescription?: string;
