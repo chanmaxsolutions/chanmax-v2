@@ -54,15 +54,15 @@ export interface TypeReference {
 
 export interface TypeCareer {
     title: string;
-    slug: {
+    slug?: {
         current: string;
     };
-    shortDescription: string;
-    longDescription: any;
-    category: string;
-    level: string;
-    type: string;
-    skills: [string];
+    shortDescription?: string;
+    longDescription?: any;
+    category?: string;
+    level?: string;
+    type?: string;
+    skills?: [string];
 }
 
 export interface TypeLeadForm {
