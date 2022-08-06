@@ -104,7 +104,7 @@ export default function Header() {
                             content={
                                 <div className="p-y w-64 text-[15px]">
                                     {whatWeDoNavs.map(({ title, Icon, href }) => (
-                                        <A href={href}>
+                                        <A href={href} key={href}>
                                             <p className="flex items-center gap-x-2 py-4 px-2 font-AvenirDemi hover:bg-gray-100">
                                                 <Icon size={25} /> {title}
                                             </p>
@@ -164,7 +164,7 @@ export default function Header() {
                                 {mobiltToggle && (
                                     <div>
                                         {whatWeDoNavs.map(({ title, href }) => (
-                                            <A href={href}>
+                                            <A href={href} key={href}>
                                                 <p className="border-b py-4">{title}</p>
                                             </A>
                                         ))}

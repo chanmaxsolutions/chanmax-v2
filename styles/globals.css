@@ -118,3 +118,7 @@
 img {
     display: unset;
 }
+
+.grecaptcha-badge {
+    opacity: 0;
+}

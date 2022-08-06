@@ -19,8 +19,8 @@ export default function Reference({ data }: any) {
 
             <ScrollBottomToTop>
                 <div className="mx-auto mt-[100px] flex max-w-3xl flex-col gap-y-[50px] px-3">
-                    {data.map((career: any) => (
-                        <CareerCard {...career} />
+                    {data.map((career: any, key: any) => (
+                        <CareerCard key={key} {...career} />
                     ))}
 
                     {data.length === 0 && <div className="text-center text-6xl">No any positions available</div>}

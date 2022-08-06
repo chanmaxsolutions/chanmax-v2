@@ -21,16 +21,6 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
     const [error, setError] = useState(false);
     const [selectedApp, setSelectedApp] = useState<any>(quotation.Modules || []);
 
-    const handleReCaptchaVerify = useCallback(async () => {
-        if (!executeRecaptcha) return "";
-
-        await executeRecaptcha();
-    }, []);
-
-    useEffect(() => {
-        handleReCaptchaVerify();
-    }, [handleReCaptchaVerify]);
-
     const handleToggle = (app: any) => {
         setError(false);
         if (selectedApp.includes(app)) {
