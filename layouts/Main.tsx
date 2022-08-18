@@ -22,14 +22,14 @@ export default function MainLayout({ children, title, description, image }: Prop
             {children}
             <Footer />
 
-            {scroll.y > 1500 && (
+            {/* {scroll.y > 1500 && (
                 <button
                     onClick={handleTop}
                     className="fixed right-10 bottom-10 z-50 hidden drop-shadow-[0px_0px_25px_#00000050] lg:block"
                 >
                     <img src="/icons/arrowIcon.svg" alt="menu" className="h-[50px] w-[50px]" />
                 </button>
-            )}
+            )} */}
         </>
     );
 }
