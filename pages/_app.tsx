@@ -8,13 +8,13 @@ import { useEffect, useState } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [isLoaded, setIsLoaded] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setIsLoaded(true);
-    //     }, 10000);
-    // }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoaded(true);
+        }, 10000);
+    }, []);
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}>
