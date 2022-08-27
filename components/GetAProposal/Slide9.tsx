@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { union } from "lodash";
 import { HiArrowRight, HiExclamation } from "react-icons/hi";
 import { HoverScaleFramer, TopToBottomFramer } from "../../utils/framerAnimation";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const appTypes = [
     "Android App",
@@ -17,7 +17,7 @@ const appTypes = [
 const romanNumbers = ["I", "II", "III", "IV", "V", "VI", "VII"];
 
 export default function Slide9({ handleNext, quotation, setQuotation, setStep }: any) {
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    const [token, setToken] = useState("");
     const [error, setError] = useState(false);
     const [selectedApp, setSelectedApp] = useState<any>(quotation.Modules || []);
 
@@ -34,23 +34,20 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
         }
     };
 
-    const submitForm = useCallback(() => {
-        if (!executeRecaptcha) return;
-        executeRecaptcha().then((captcha) => {
-            const submitData = { ...quotation, captcha };
-            fetch("/api/lead", {
-                method: "POST",
-                headers: {
-                    Accept: "application/json, text/plain, */*",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(submitData),
-            })
-                .then((res) => res.json())
-                .then(() => handleNext())
-                .catch((err) => console.log(err));
-        });
-    }, [executeRecaptcha]);
+    const submitForm = () => {
+        const submitData = { ...quotation, captcha: token };
+        fetch("/api/lead", {
+            method: "POST",
+            headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(submitData),
+        })
+            .then((res) => res.json())
+            .then(() => handleNext())
+            .catch((err) => console.log(err));
+    };
 
     const onSubmit = () => {
         if (selectedApp.length === 0) return setError(true);
@@ -115,6 +112,8 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
                                 </div>
                             )}
                         </div>
+
+                        <GoogleReCaptcha onVerify={setToken} />
                     </div>
                 </TopToBottomFramer>
             </div>
