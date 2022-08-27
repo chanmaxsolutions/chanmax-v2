@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
@@ -16,6 +17,7 @@
     "lodash": "^4.17.21",
     "next": "latest",
     "next-sanity": "^0.6.0",
+    "next-sitemap": "^3.1.21",
     "react": "18.1.0",
     "react-clutch-badge": "^1.9.0",
     "react-dom": "18.1.0",
