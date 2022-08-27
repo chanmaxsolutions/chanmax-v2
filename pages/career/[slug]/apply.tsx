@@ -71,9 +71,9 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
             </div>
 
             <div className="mx-auto mt-[100px] max-w-3xl px-3 lg:px-0">
-                {isSubmitSuccessful ? (
-                    <h1 className="text_line_img my-24 text-center font-AvenirDemi text-2xl lg:text-6xl lg:after:right-[240px]">
-                        Thanks for applied. We will get back to you as soon as possible.
+                {!isSubmitSuccessful ? (
+                    <h1 className="text_line_img my-48 text-center font-AvenirDemi text-2xl lg:text-6xl lg:after:right-[240px]">
+                        Thanks for applying. We will get back to you as soon as possible.
                     </h1>
                 ) : (
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5">
