@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.chanmax.io/
+
+# Sitemaps
+Sitemap: https://www.chanmax.io/sitemap.xml
