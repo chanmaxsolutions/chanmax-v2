@@ -33,6 +33,9 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
         formState: { errors, isSubmitting, isSubmitSuccessful },
     } = useForm({ resolver: yupResolver(schema) });
 
+    console.log(token);
+    
+
     const onSubmit = async (data: any) => {
         try {
             const submitData = { ...data, captcha: token };
