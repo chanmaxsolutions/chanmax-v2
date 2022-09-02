@@ -5,7 +5,6 @@ import "../styles/globals.css";
 import GetAProposal from "../components/GetAProposal";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -17,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, []);
 
     return (
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}>
+        <>
             {isLoaded && (
                 <>
                     <Script strategy="lazyOnload">
@@ -84,7 +83,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
             <div id="fb-customer-chat" className="fb-customerchat"></div>
             <Component {...pageProps} />
-        </GoogleReCaptchaProvider>
+        </>
     );
 }
 

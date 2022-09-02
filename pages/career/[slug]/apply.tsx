@@ -1,4 +1,4 @@
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from "react-google-recaptcha-v3";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,7 +24,7 @@ const schema = yup.object().shape({
 });
 
 export default function ApplyCareer({ title, category, type, level }: TypeCareer) {
-    const [token, setToken] = useState("");
+    const [token, setToken] = useState<any>("");
     const { asPath } = useRouter();
     const {
         register,
@@ -34,6 +34,8 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
     } = useForm({ resolver: yupResolver(schema) });
 
     const onSubmit = async (data: any) => {
+        if (!token) return;
+
         try {
             const submitData = { ...data, captcha: token };
             const result = await fetch("/api/career", {
@@ -119,13 +121,15 @@ export default function ApplyCareer({ title, category, type, level }: TypeCareer
                             label="Write about your expertise and how you can assist with Chanmax's growth."
                             placeholder="Describe your expertise and the qualities that will help Chanmax's growth, and also mention your previous success stories, experiences, experiments, or failures and the learning you got from them."
                         />
-                        <GoogleReCaptcha onVerify={setToken} />
+                        <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""} onChange={setToken} />
                         <input
                             type="hidden"
                             {...register("Applied Job")}
                             value={`${process.env.NEXT_PUBLIC_BASE_URL}${asPath.split("/apply")[0]}`}
                         />
-                        <button className="btn">{isSubmitting ? "Please wait..." : "Apply Now"}</button>
+                        <button className="btn" disabled={!token}>
+                            {isSubmitting ? "Please wait..." : "Apply Now"}
+                        </button>
                     </form>
                 )}
             </div>

@@ -43,6 +43,10 @@
         @apply border-primary bg-primary text-dark;
     }
 
+    .btn:disabled {
+        @apply opacity-80 hover:border-dark hover:bg-dark hover:text-white;
+    }
+
     .btn-red {
         @apply btn hover:border-[#EE0007] hover:bg-[#EE0007] hover:text-white;
     }
@@ -117,8 +121,4 @@
 
 img {
     display: unset;
-}
-
-.grecaptcha-badge {
-    opacity: 0;
 }

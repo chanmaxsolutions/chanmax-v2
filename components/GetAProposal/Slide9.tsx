@@ -2,7 +2,7 @@ import { useState } from "react";
 import { union } from "lodash";
 import { HiArrowRight, HiExclamation } from "react-icons/hi";
 import { HoverScaleFramer, TopToBottomFramer } from "../../utils/framerAnimation";
-import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const appTypes = [
     "Android App",
@@ -17,7 +17,7 @@ const appTypes = [
 const romanNumbers = ["I", "II", "III", "IV", "V", "VI", "VII"];
 
 export default function Slide9({ handleNext, quotation, setQuotation, setStep }: any) {
-    const [token, setToken] = useState("");
+    const [token, setToken] = useState<any>("");
     const [error, setError] = useState(false);
     const [selectedApp, setSelectedApp] = useState<any>(quotation.Modules || []);
 
@@ -35,6 +35,8 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
     };
 
     const submitForm = () => {
+        if (!token) return;
+
         const submitData = { ...quotation, captcha: token };
         fetch("/api/lead", {
             method: "POST",
@@ -95,6 +97,11 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
                                         </div>
                                     </HoverScaleFramer>
                                 ))}
+                                <ReCAPTCHA
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY || ""}
+                                    onChange={setToken}
+                                    className="mt-5"
+                                />
                             </div>
                             {error ? (
                                 <p className="mt-4 flex w-fit items-center gap-x-1 bg-red-100 px-4 py-1 text-base text-red-800">
@@ -104,6 +111,7 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
                             ) : (
                                 <div className="mt-5 flex items-center justify-start gap-x-5">
                                     <button
+                                        disabled={!token}
                                         onClick={onSubmit}
                                         className="btn flex h-auto items-center gap-x-2 px-4 py-2 text-xl"
                                     >
@@ -112,8 +120,6 @@ export default function Slide9({ handleNext, quotation, setQuotation, setStep }:
                                 </div>
                             )}
                         </div>
-
-                        <GoogleReCaptcha onVerify={setToken} />
                     </div>
                 </TopToBottomFramer>
             </div>
