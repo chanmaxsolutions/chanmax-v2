@@ -82,8 +82,8 @@ export default function Header() {
                 </div>
             )}
 
-            <div className="header sticky top-0 z-50 bg-white px-3">
-                <div className="mx-auto flex max-w-[1360px] items-center justify-between">
+            <div className="header sticky top-0 z-50 bg-white">
+                <div className="mx-auto flex max-w-[1360px] items-center justify-between px-3">
                     <A href="/">
                         {scroll.y > 50 ? (
                             <motion.div whileHover={{ scale: 0.95 }}>

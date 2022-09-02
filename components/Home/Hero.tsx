@@ -5,7 +5,7 @@ import { BottomToTopFramer, OpacityFramer, TopToBottomFramer } from "../../utils
 
 export default function Hero() {
     return (
-        <div className="mx-auto mt-[100px] flex max-w-[1360px] items-center px-3 lg:px-0">
+        <div className="mx-auto mt-[100px] flex max-w-[1360px] items-center px-3">
             <div className="flex-grow">
                 <TopToBottomFramer>
                     <div className="text_line_img ml-0 text-center font-[AvenirBold] text-[38px] leading-[50px] lg:max-w-[520px] lg:text-left lg:text-[50px] lg:leading-[60px]">

@@ -36,7 +36,7 @@
     }
 
     .btn {
-        @apply h-[62px] border border-dark bg-dark px-5 py-2 font-AvenirBold text-2xl text-white transition-colors duration-150 md:text-xl lg:text-2xl xl:text-[28px];
+        @apply h-[62px] border border-dark bg-dark px-5 py-2 font-AvenirBold text-2xl text-white transition-colors duration-150 md:text-xl xl:text-[28px];
     }
 
     .btn:hover {
@@ -52,7 +52,7 @@
     }
 
     .header {
-        @apply pt-[23px] pb-[22px] text-dark shadow-[0_1px_0px_#0000000F] xl:px-10;
+        @apply pt-[23px] pb-[22px] text-dark shadow-[0_1px_0px_#0000000F];
     }
 
     .text_line_img {
