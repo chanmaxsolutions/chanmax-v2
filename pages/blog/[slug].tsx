@@ -66,6 +66,53 @@ export default function BlogSinglePage({ title, mainImage, body, blogCategory, b
                                 ),
                             }}
                         />
+
+                        {blogAuthor && (
+                            <div>
+                                <div className="mt-20 flex items-center space-x-3">
+                                    <Image
+                                        src={urlFor(blogAuthor?.avatar).url()}
+                                        width={100}
+                                        height={100}
+                                        className="rounded-full"
+                                    />
+                                    <div>
+                                        <h3 className="font-[AvenirBold] text-[20px]">{blogAuthor?.fullName}</h3>
+                                        <p className="text-lg font-bold text-gray-500">{blogAuthor?.jobTitle}</p>
+                                        <div className="mt-1 flex items-center gap-x-2">
+                                            {blogAuthor.linkedin && (
+                                                <a
+                                                    href={blogAuthor.linkedin}
+                                                    target="_blank"
+                                                    className="rounded-full p-1 hover:bg-primary"
+                                                >
+                                                    <Image src="/icons/linkedin.svg" width={22} height={22} />
+                                                </a>
+                                            )}
+                                            {blogAuthor.instagram && (
+                                                <a
+                                                    href={blogAuthor.instagram}
+                                                    target="_blank"
+                                                    className="rounded-full p-1 hover:bg-primary"
+                                                >
+                                                    <Image src="/icons/instagram.svg" width={22} height={22} />
+                                                </a>
+                                            )}
+                                            {blogAuthor.facebook && (
+                                                <a
+                                                    href={blogAuthor.facebook}
+                                                    target="_blank"
+                                                    className="rounded-full p-1 hover:bg-primary"
+                                                >
+                                                    <Image src="/icons/facebook.svg" width={22} height={22} />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="text-lg font-bold text-gray-500 mt-5">{blogAuthor?.description}</p>
+                            </div>
+                        )}
                     </ScrollBottomToTop>
                 </div>
             </div>
@@ -107,6 +154,10 @@ export const getStaticProps = async ({ params }: any) => {
             fullName,
             avatar,
             jobTitle,
+            facebook,
+            instagram,
+            linkedin,
+            description
         },
         body
     }`;

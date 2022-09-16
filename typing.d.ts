@@ -48,6 +48,10 @@ export interface TypeBlog {
         fullName: string;
         avatar: any;
         jobTitle: string;
+        facebook: string;
+        linkedin: string;
+        instagram: string;
+        description: string;
     };
 }
 
