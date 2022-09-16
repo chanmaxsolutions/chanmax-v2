@@ -112,7 +112,7 @@ export default function About() {
                 <ScrollBottomToTop>
                     <div className="mt-[50px] flex flex-col items-center gap-[30px] rounded-[10px] bg-[#FFF1B2] p-[30px] selection:bg-dark selection:text-white lg:flex-row">
                         <Image src="/icons/who-we-are-icon.svg" width={305.62} height={289.7} />
-                        <p className="max-w-[628px] text-2xl leading-[36px] lg:text-[30px]">
+                        <p className="max-w-[628px] text-2xl leading-[1.2em] lg:text-[30px]">
                             Building world-class products using local talents (from the motherland) and empowering the
                             community from the grassroot through creating job opportunities.
                         </p>
@@ -141,7 +141,7 @@ export default function About() {
             <ScrollBottomToTop>
                 <div className="mx-auto mt-[104px] max-w-7xl rounded-[10px] bg-primary px-3 selection:bg-dark selection:text-white">
                     <div className="w-full rounded-[10px] py-[109px] text-center">
-                        <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                        <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                             Looking for a Passionate Team to Build your Idea? You've Found it.
                         </h1>
                         <Link href={{ hash: "get-a-proposal" }}>

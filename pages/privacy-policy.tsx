@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
                 <OpacityFramer>
                     <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">
                         <TopToBottomFramer>
-                            <h1 className="text_line_img2 font-[AvenirBold] text-[30px] leading-[50px] lg:text-[50px]">
+                            <h1 className="text_line_img2 font-[AvenirBold] text-[30px] leading-[1.2em] lg:text-[50px]">
                                 Privacy Policy
                             </h1>
                         </TopToBottomFramer>

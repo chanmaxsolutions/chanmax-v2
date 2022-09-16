@@ -94,7 +94,7 @@ export default function Approch() {
             <ScrollBottomToTop>
                 <div className="mx-auto mt-[104px] max-w-7xl rounded-[10px] bg-primary px-3 selection:bg-dark selection:text-white">
                     <div className="w-full rounded-[10px] py-[109px] text-center">
-                        <h1 className="mx-auto max-w-[1084px] px-3 text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                        <h1 className="mx-auto max-w-[1084px] px-3 text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                             Looking for a Passionate Team to Build your Idea? You've Found it.
                         </h1>
                         <Link href={{ hash: "get-a-proposal" }}>

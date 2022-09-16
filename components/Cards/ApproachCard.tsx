@@ -13,7 +13,7 @@ export default function ApproachCard(props: TypeApproachSection) {
                     <Image src={props.img} width={305.62} height={209.7} />
                     <div className="col-span-2">
                         <h2 className="font-AvenirBold text-[34px]">{props.heading}</h2>
-                        <p className="mt-5 text-[30px] leading-[36px]">{props.para}</p>
+                        <p className="mt-5 text-[30px] leading-[1.2em]">{props.para}</p>
                     </div>
                 </div>
             </ScrollBottomToTop>

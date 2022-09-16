@@ -33,7 +33,7 @@ export default function Main() {
 
             <div className="mx-auto max-w-[1194px] px-3">
                 <ScrollBottomToTop>
-                    <h2 className="text_line_img mt-[142px] text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h2 className="text_line_img mt-[142px] text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Values that drive us Towards Success.
                     </h2>
                 </ScrollBottomToTop>
@@ -48,7 +48,7 @@ export default function Main() {
                         <div className="rounded-[10px] bg-[#F8F8F8] px-[30px] pt-[47px] pb-[52px]">
                             <Image src="/icons/heart1.svg" width={49} height={50} />
                             <h3 className="mt-5 font-AvenirBold text-2xl">Integrity and Honesty</h3>
-                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[21px]">
+                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[1.2em]">
                                 We have the bravery to evolve and the honesty and integrity to confess when we are
                                 wrong.
                             </p>
@@ -57,7 +57,7 @@ export default function Main() {
                         <div className="rounded-[10px] bg-[#F8F8F8] px-[30px] pt-[47px] pb-[52px]">
                             <Image src="/icons/heart2.svg" width={49} height={50} />
                             <h3 className="mt-5 font-AvenirBold text-2xl">Work with Passion</h3>
-                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[21px]">
+                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[1.2em]">
                                 We are committed to any endeavor with both our hearts and minds. Never execute a task
                                 half-heartedly.
                             </p>
@@ -66,7 +66,7 @@ export default function Main() {
                         <div className="rounded-[10px] bg-[#F8F8F8] px-[30px] pt-[47px] pb-[52px]">
                             <Image src="/icons/heart3.svg" width={49} height={50} />
                             <h3 className="mt-5 font-AvenirBold text-2xl">Customer Centric</h3>
-                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[21px]">
+                            <p className="mt-[17px] font-AvenirMedium text-lg leading-[1.2em]">
                                 Our customers motivate us to achieve greatness. We work hard to exceed their
                                 expectations.
                             </p>
@@ -77,7 +77,7 @@ export default function Main() {
 
             <div className="mt-[100px] w-full bg-[#FFD000] py-[109px] text-center selection:bg-dark selection:text-white px-3 lg:px-0">
                 <ScrollBottomToTop>
-                    <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                    <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                         We have Successfully Delivered 30+ Projects for Clients from 8+ Countries in the last year.
                     </h1>
                 </ScrollBottomToTop>
@@ -94,7 +94,7 @@ export default function Main() {
 
             <div className="mx-auto max-w-[1194px] px-3">
                 <ScrollBottomToTop>
-                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Services that add Value to your Business.
                     </h1>
                 </ScrollBottomToTop>
@@ -149,7 +149,7 @@ export default function Main() {
 
             <div className="mt-[100px] w-full rounded-[10px] bg-[#FFD000] py-[109px] text-center selection:bg-dark selection:text-white">
                 <ScrollBottomToTop>
-                    <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                    <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                         A Diligent Team bonded on an aligned Vision for Change and Innovation
                     </h1>
                 </ScrollBottomToTop>
@@ -170,12 +170,12 @@ export default function Main() {
 
             <div className="mx-auto mt-[100px] max-w-7xl px-3">
                 <ScrollBottomToTop>
-                    <h1 className="text_line_img text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h1 className="text_line_img text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Curious to know what our Customers say?
                     </h1>
                 </ScrollBottomToTop>
                 <ScrollBottomToTop>
-                    <p className="mt-[23px] text-center text-[24px] leading-[30px]">
+                    <p className="mt-[23px] text-center text-[24px] leading-[1.2em]">
                         Listen to what our happy clients have to say and a promise of what is to come
                     </p>
                 </ScrollBottomToTop>
@@ -250,7 +250,7 @@ export default function Main() {
             <ScrollBottomToTop>
                 <div className="mx-auto mt-[100px] max-w-7xl rounded-[10px] bg-[#FFD000] px-3 selection:bg-dark selection:text-white">
                     <div className="w-full rounded-[10px] py-[109px] text-center">
-                        <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                        <h1 className="mx-auto max-w-5xl px-3 text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                             Looking for a Passionate Team to Build your Idea? You've Found it.
                         </h1>
                         <Link href={{ hash: "get-a-proposal" }}>

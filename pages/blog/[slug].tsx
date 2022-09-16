@@ -23,7 +23,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                 ))}
                             </div>
 
-                            <h1 className="mt-10 text-center font-[AvenirBold] text-[30px] leading-[50px] lg:text-[50px]">
+                            <h1 className="mt-10 text-center font-[AvenirBold] text-[30px] leading-[1.2em] lg:text-[50px]">
                                 {title}
                             </h1>
 

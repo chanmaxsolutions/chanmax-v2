@@ -10,12 +10,12 @@ export default function Hero(props: TypeHeroSection) {
             <div className="gap-x-[120px mx-auto flex max-w-[1360px] items-center px-3 py-4">
                 <div className="flex-grow">
                     <TopToBottomFramer>
-                        <div className="text_line_img2 ml-0 text-center font-[AvenirBold] text-[30px] leading-[40px] after:right-10 lg:max-w-[680px] lg:text-left lg:text-[40px] lg:leading-[60px] lg:after:right-36">
+                        <div className="text_line_img2 ml-0 text-center font-[AvenirBold] text-[30px] leading-[1.2em] after:right-10 lg:max-w-[680px] lg:text-left lg:text-[40px]  lg:after:right-36">
                             {props.heading}
                         </div>
                     </TopToBottomFramer>
                     <OpacityFramer>
-                        <p className="mt-10 text-center text-2xl leading-[29px] lg:max-w-[599px] lg:text-left">
+                        <p className="mt-10 text-center text-2xl leading-[1.2em] lg:max-w-[599px] lg:text-left">
                             {props.para}
                         </p>
                     </OpacityFramer>

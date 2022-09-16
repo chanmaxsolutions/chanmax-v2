@@ -20,7 +20,7 @@ export default function ReferenceSinglePage({
                 <OpacityFramer>
                     <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">
                         <TopToBottomFramer>
-                            <h1 className="text_line_img2 text-center font-[AvenirBold] text-[30px] leading-[50px] after:right-10 lg:text-[50px] lg:after:right-5">
+                            <h1 className="text_line_img2 text-center font-[AvenirBold] text-[30px] leading-[1.2em] after:right-10 lg:text-[50px] lg:after:right-5">
                                 {title}
                             </h1>
                         </TopToBottomFramer>
@@ -41,7 +41,7 @@ export default function ReferenceSinglePage({
                             serializers={{
                                 h1: (props: any) => <h1 className="my-5 text-2xl font-bold" {...props} />,
                                 h2: (props: any) => (
-                                    <h2 className="mt-[50px] font-AvenirBold text-[34px] leading-10" {...props} />
+                                    <h2 className="mt-[50px] font-AvenirBold text-[34px] leading-[1.2em]" {...props} />
                                 ),
                                 normal: (props: any) => <p className="mt-[30px] text-lg" {...props} />,
                                 li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,

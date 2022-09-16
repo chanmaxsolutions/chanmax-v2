@@ -22,7 +22,7 @@ export default function MobileAppDevelopment() {
 
             <div className="mx-auto max-w-[1194px] px-3">
                 <ScrollBottomToTop>
-                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Why Choose us among many?
                     </h1>
                 </ScrollBottomToTop>
@@ -66,7 +66,7 @@ export default function MobileAppDevelopment() {
                 </div>
 
                 <ScrollBottomToTop>
-                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Our Tech Tools.
                     </h1>
                 </ScrollBottomToTop>
@@ -88,7 +88,7 @@ export default function MobileAppDevelopment() {
 
             <div className="mx-auto max-w-5xl px-3">
                 <ScrollBottomToTop>
-                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[40px]">
+                    <h1 className="text_line_img mt-[100px] text-center font-AvenirBold text-[34px] leading-[1.2em]">
                         Bring your Ideas to Life.
                     </h1>
                 </ScrollBottomToTop>
@@ -127,7 +127,7 @@ export default function MobileAppDevelopment() {
 
                 <div className="my-[239px] text-center">
                     <ScrollBottomToTop>
-                        <h2 className="text-center font-AvenirBold text-[34px] leading-[40px] lg:text-[50px] lg:leading-[60px]">
+                        <h2 className="text-center font-AvenirBold text-[34px] leading-[1.2em] lg:text-[50px] ">
                             Let's Work Together to make a difference in your Business.
                         </h2>
                     </ScrollBottomToTop>
