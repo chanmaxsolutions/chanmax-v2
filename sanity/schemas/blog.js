@@ -20,8 +20,8 @@ export default {
         {
             name: "blogCategory",
             title: "Category",
-            type: "reference",
-            to: [{ type: "blogCategory" }],
+            type: "array",
+            of: [{ type: "reference", to: { type: "blogCategory" } }],
         },
         {
             name: "blogAuthor",

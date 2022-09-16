@@ -14,7 +14,9 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                 <ScrollBottomToTop>
                     <h1 className="font-[AvenirBold] text-[30px] leading-[50px] lg:text-[50px]">{title}</h1>
 
-                    {blogCategory && <button className="mt-10 bg-dark/10 py-1 px-5">{blogCategory?.name}</button>}
+                    {blogCategory?.map((cat: any) => (
+                        <button className="mt-10 bg-dark/10 py-1 px-5 mx-1">{cat?.name}</button>
+                    ))}
 
                     {blogAuthor && (
                         <div className="mt-10 flex items-center space-x-3">
@@ -153,7 +155,7 @@ export const getStaticProps = async ({ params }: any) => {
         _id,
         title,
         mainImage,
-        blogCategory -> {
+        blogCategory[] -> {
             name
         },
         blogAuthor -> {
