@@ -1,6 +1,7 @@
 import { Tooltip } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -83,35 +84,35 @@ export default function Footer() {
                                 target="_blank"
                                 className="rounded-full p-2 hover:bg-primary"
                             >
-                                <Image src="/icons/linkedin.svg" width={30.51} height={30.51} />
+                                <FaLinkedin size={30.51} />
                             </a>
                             <a
                                 href="https://twitter.com/chanmaxtech"
                                 target="_blank"
                                 className="rounded-full p-2 hover:bg-primary"
                             >
-                                <Image src="/icons/twitter.svg" width={30.51} height={30.51} />
+                                <FaTwitter size={30.51} />
                             </a>
                             <a
                                 href="https://www.instagram.com/chanmax.io/"
                                 target="_blank"
                                 className="rounded-full p-2 hover:bg-primary"
                             >
-                                <Image src="/icons/instagram.svg" width={30.51} height={30.51} />
+                                <FaInstagram size={30.51} />
                             </a>
                             <a
                                 href="https://www.facebook.com/chanmaxtech"
                                 target="_blank"
                                 className="rounded-full p-2 hover:bg-primary"
                             >
-                                <Image src="/icons/facebook.svg" width={30.51} height={30.51} />
+                                <FaFacebookF size={30.51} />
                             </a>
                             <a
                                 href="https://www.youtube.com/c/ChanmaxTech"
                                 target="_blank"
                                 className="rounded-full p-2 hover:bg-primary"
                             >
-                                <Image src="/icons/youtube.svg" width={30.51} height={30.51} />
+                                <FaYoutube size={30.51} />
                             </a>
                         </div>
                     </div>

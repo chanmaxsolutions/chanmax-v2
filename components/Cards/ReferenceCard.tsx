@@ -8,7 +8,7 @@ export default function ReferenceCard({ coverImage, title, shortDescription, slu
     return (
         <Link href={`/reference/${slug.current}`}>
             <a className="rounded-[10px] bg-[#F8F8F8]">
-                <Image src={urlFor(coverImage).url()} width={582} height={300} />
+                <Image src={urlFor(coverImage).url()} width={582} height={300} className="rounded-[10px]" />
                 <div className="p-[50px] pt-[30px]">
                     <h2 className="font-AvenirBold text-2xl">{title}</h2>
                     <p className="mt-[17px] text-lg">{shortDescription}</p>

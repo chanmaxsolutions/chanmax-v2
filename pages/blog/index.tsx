@@ -1,39 +1,28 @@
-import Image from "next/image";
-import Link from "next/link";
-import { HiOutlineArrowRight } from "react-icons/hi";
 import BlogCard2 from "../../components/Cards/BlogCard2";
 import MainLayout from "../../layouts/Main";
-import { sanityClient, urlFor } from "../../sanity";
-import { ScrollBottomToTop } from "../../utils/framerAnimation";
+import { sanityClient } from "../../sanity";
+import { OpacityFramer, TopToBottomFramer } from "../../utils/framerAnimation";
 
-export default function Blog({ blogs, featuredBlog }: any) {
+export default function Blog({ blogs }: any) {
     return (
         <MainLayout title="Blog - Chanmax" description="Blog - Chanmax">
-            <div className="mx-auto mt-[100px] max-w-3xl overflow-hidden rounded-[10px] bg-[#F8F8F8] px-3 lg:px-0">
-                <ScrollBottomToTop>
-                    <Link href={`/blog/${featuredBlog?.slug.current}`}>
-                        <a className="rounded-[10px] bg-[#F8F8F8]">
-                            <Image
-                                width={768}
-                                height={450}
-                                src={urlFor(featuredBlog?.coverImage).url()}
-                                className="rounded-[10px]"
-                            />
-                            <div className="p-[50px] pt-[30px]">
-                                <h2 className="font-AvenirBold text-2xl lg:text-[34px]">{featuredBlog?.title}</h2>
-                                <p className="mt-[17px] text-2xl">{featuredBlog?.shortDescription}</p>
-                                <div className="mt-[35px] flex w-auto items-center gap-x-2 hover:underline">
-                                    <p className="font-AvenirDemi text-lg">Read more</p>
-                                    <HiOutlineArrowRight size={16} />
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-                </ScrollBottomToTop>
+            <div className="bg-primary py-[27px] selection:bg-dark selection:text-white">
+                <OpacityFramer>
+                    <div className="mx-auto flex h-[403px] max-w-[1266px] items-center justify-center bg-[url('/images/reference-bg.svg')] bg-cover px-3 py-4">
+                        <TopToBottomFramer>
+                            <h1 className="text_line_img2 text-center font-[AvenirBold] text-[30px] leading-[50px] text-dark after:right-10 lg:text-[50px] lg:after:right-5">
+                                Chanmax Blog
+                            </h1>
+                            <p className="mt-10 max-w-3xl text-center text-2xl">
+                                A collection of stories sharing insights from our customers, our employees, industry
+                                thought leaders, and more.
+                            </p>
+                        </TopToBottomFramer>
+                    </div>
+                </OpacityFramer>
             </div>
-
-            <div className="mx-auto mt-[50px] flex max-w-3xl flex-col gap-y-[50px] px-3 lg:px-0">
-                {blogs.map((blog: any, key:string) => (
+            <div className="mx-auto mt-[100px] grid max-w-[1194px] gap-x-[30px] gap-y-[50px] px-3 lg:grid-cols-2">
+                {blogs.map((blog: any, key: string) => (
                     <BlogCard2 key={key} {...blog} />
                 ))}
             </div>
@@ -52,23 +41,10 @@ export const getStaticProps = async () => {
         shortDescription
     }`;
 
-    const featuredQuery = `*[_type == "featuredBlog"]{
-        _id,
-        blog -> {
-           title,
-           slug,
-           coverImage,
-           shortDescription
-        }
-    }`;
-
     const blogs = await sanityClient.fetch(blogQuery);
-    const featuredBlog = await sanityClient.fetch(featuredQuery);
-
     return {
         props: {
             blogs,
-            featuredBlog: featuredBlog?.[0]?.blog,
         },
         revalidate: 300, // after 300 seconds updated the old cached version
     };
