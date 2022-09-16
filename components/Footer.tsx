@@ -47,7 +47,7 @@ export default function Footer() {
                                 <a className="max-w-fit hover:underline">Contact Us</a>
                             </Link>
                             <Link href="/career">
-                                <a className="max-w-fit hover:underline">Opportunities</a>
+                                <a className="max-w-fit hover:underline">Career</a>
                             </Link>
                             <Link href="/privacy-policy">
                                 <a className="max-w-fit hover:underline">Privacy Policy</a>

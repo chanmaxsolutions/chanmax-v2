@@ -8,8 +8,9 @@ import { Drawer, Popover } from "antd";
 import { useWindowScroll } from "@mantine/hooks";
 import { HiChevronDown, HiOutlineMenu, HiOutlineUserGroup, HiOutlineX } from "react-icons/hi";
 import { AiOutlineLaptop, AiOutlineMobile } from "react-icons/ai";
-import { IoDiamondOutline } from "react-icons/io5";
+import { IoBriefcaseOutline, IoDiamondOutline, IoReaderOutline } from "react-icons/io5";
 import { BiBrain, BiAtom } from "react-icons/bi";
+import { VscReferences } from "react-icons/vsc";
 
 const whatWeDoNavs = [
     {
@@ -122,11 +123,41 @@ export default function Header() {
                             </p>
                         </Popover>
 
+                        <Popover
+                            placement="bottom"
+                            content={
+                                <div className="p-y w-64 text-[15px]">
+                                    <A href="/reference">
+                                        <p className="flex items-center gap-x-2 py-4 px-2 font-AvenirDemi hover:bg-gray-100">
+                                            <VscReferences size={25} /> Reference
+                                        </p>
+                                    </A>
+                                    <A href="/blog">
+                                        <p className="flex items-center gap-x-2 py-4 px-2 font-AvenirDemi hover:bg-gray-100">
+                                            <IoReaderOutline size={25} />
+                                            Blog
+                                        </p>
+                                    </A>
+                                    <A href="/career">
+                                        <p className="flex items-center gap-x-2 py-4 px-2 font-AvenirDemi hover:bg-gray-100">
+                                            <IoBriefcaseOutline size={25} />
+                                            Career
+                                        </p>
+                                    </A>
+                                </div>
+                            }
+                        >
+                            <p className="group flex cursor-pointer items-center gap-x-1 font-AvenirDemi">
+                                Resources
+                                <HiChevronDown
+                                    size={25}
+                                    className="transition-transform duration-300 group-hover:rotate-180"
+                                />
+                            </p>
+                        </Popover>
+
                         <A href="/how-we-do-it">
                             <p className="font-AvenirDemi">How We Do It?</p>
-                        </A>
-                        <A href="/reference">
-                            <p className="font-AvenirDemi">References</p>
                         </A>
                         <A href="/contact-us">
                             <p className="font-AvenirDemi">Contact Us</p>
@@ -176,6 +207,12 @@ export default function Header() {
                             </A>
                             <A href="/reference">
                                 <p className="border-b py-4 font-AvenirDemi">References</p>
+                            </A>
+                            <A href="/blog">
+                                <p className="border-b py-4 font-AvenirDemi">Blogs</p>
+                            </A>
+                            <A href="/career">
+                                <p className="border-b py-4 font-AvenirDemi">Career</p>
                             </A>
                             <A href="/contact-us">
                                 <p className="border-b py-4 font-AvenirDemi">Contact Us</p>
