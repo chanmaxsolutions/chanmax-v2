@@ -33,8 +33,8 @@ export default function Blog({ blogs, featuredBlog }: any) {
             </div>
 
             <div className="mx-auto mt-[50px] flex max-w-3xl flex-col gap-y-[50px] px-3 lg:px-0">
-                {blogs.map((blog: any) => (
-                    <BlogCard2 {...blog} />
+                {blogs.map((blog: any, key:string) => (
+                    <BlogCard2 key={key} {...blog} />
                 ))}
             </div>
         </MainLayout>

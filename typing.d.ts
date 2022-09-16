@@ -37,6 +37,20 @@ export interface TypeWebAppTechCard {
     img: string;
 }
 
+export interface TypeBlog {
+    title: string;
+    mainImage: string;
+    body: any;
+    blogCategory: {
+        name: string;
+    };
+    blogAuthor: {
+        fullName: string;
+        avatar: any;
+        jobTitle: string;
+    };
+}
+
 export interface TypeReference {
     title: string;
     slug: {

@@ -18,6 +18,18 @@ export default {
             },
         },
         {
+            name: "blogCategory",
+            title: "Category",
+            type: "reference",
+            to: [{ type: "blogCategory" }],
+        },
+        {
+            name: "blogAuthor",
+            title: "Author",
+            type: "reference",
+            to: [{ type: "blogAuthor" }],
+        },
+        {
             name: "coverImage",
             title: "Cover image",
             type: "image",
