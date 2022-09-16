@@ -13,7 +13,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
         <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
             <div className="bg-[#F8F8F8] py-[27px] selection:bg-dark selection:text-white">
                 <OpacityFramer>
-                    <div className="mx-auto flex h-[403px] max-w-5xl items-center justify-center bg-cover px-3 py-4">
+                    <div className="mx-auto flex max-w-5xl items-center justify-center bg-cover px-3 py-4">
                         <TopToBottomFramer>
                             <div className="mt-10 flex items-center justify-center gap-4 overflow-y-scroll lg:overflow-hidden">
                                 {blogCategory?.map((cat: any) => (
@@ -59,17 +59,23 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                             content={body}
                             serializers={{
-                                h1: (props: any) => <h1 className="my-5 text-2xl font-bold" {...props} />,
-                                h2: (props: any) => <h2 className="mt-[50px] font-AvenirBold text-[34px]" {...props} />,
-                                normal: (props: any) => <p className="mt-[30px] text-lg" {...props} />,
-                                li: ({ children }: any) => <li className="ml-4 list-disc">{children}</li>,
+                                h1: (props: any) => (
+                                    <h1 className="my-5 text-2xl font-bold leading-[1.2em]" {...props} />
+                                ),
+                                h2: (props: any) => (
+                                    <h2 className="mt-[50px] font-AvenirBold text-[34px] leading-[1.2em]" {...props} />
+                                ),
+                                normal: (props: any) => <p className="mt-[30px] text-lg leading-[1.2em]" {...props} />,
+                                li: ({ children }: any) => (
+                                    <li className="ml-4 list-disc leading-[1.2em]">{children}</li>
+                                ),
                                 blockquote: ({ children }: any) => (
-                                    <blockquote className="border-l-primary-purple border-l-[6px] pl-4 text-xl">
+                                    <blockquote className="border-l-primary-purple border-l-[6px] pl-4 text-xl leading-[1.2em]">
                                         {children}
                                     </blockquote>
                                 ),
                                 link: ({ href, children }: any) => (
-                                    <a href={href} className="text-blue-500 hover:underline">
+                                    <a href={href} className="leading-[1.2em] text-blue-500 hover:underline">
                                         {children}
                                     </a>
                                 ),

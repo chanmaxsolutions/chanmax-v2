@@ -8,7 +8,7 @@ export default function BlogShare() {
     return (
         <div className="mt-20">
             <h1 className="my-5 font-AvenirBold text-[34px]">Share this post</h1>
-            <div className="flex space-x-2">
+            <div className="flex gap-2 flex-wrap">
                 <FacebookShareButton url={`https://www.chanmax.io${asPath}`}>
                     <button className="flex items-center gap-x-2 bg-dark py-2 px-4 text-xl text-white">
                         <FaFacebookF className="text-white" size={22} /> Facebook
