@@ -1,11 +1,13 @@
 import Image from "next/image";
 import PortableText from "react-portable-text";
+import BlogShare from "../../components/Blog/BlogShare";
+import Comment from "../../components/Blog/Comment";
 import MainLayout from "../../layouts/Main";
 import { sanityClient, urlFor } from "../../sanity";
 import { TypeBlog } from "../../typing";
 import { ScrollBottomToTop } from "../../utils/framerAnimation";
 
-export default function BlogSinglePage({ title, mainImage, body, blogCategory, blogAuthor }: TypeBlog) {
+export default function BlogSinglePage({ _id, title, mainImage, body, blogCategory, blogAuthor, comments }: TypeBlog) {
     return (
         <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
             <div className="mx-auto mt-[100px] max-w-5xl px-3 lg:px-0">
@@ -110,10 +112,14 @@ export default function BlogSinglePage({ title, mainImage, body, blogCategory, b
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-lg font-bold text-gray-500 mt-5">{blogAuthor?.description}</p>
+                                <p className="mt-5 text-lg font-bold text-gray-500">{blogAuthor?.description}</p>
                             </div>
                         )}
                     </ScrollBottomToTop>
+
+                    <BlogShare />
+
+                    <Comment _id={_id} comments={comments} />
                 </div>
             </div>
         </MainLayout>
@@ -159,6 +165,10 @@ export const getStaticProps = async ({ params }: any) => {
             linkedin,
             description
         },
+        "comments": *[
+            _type == "blogComment" &&
+            blog._ref == ^._id &&
+            approved == true],
         body
     }`;
 

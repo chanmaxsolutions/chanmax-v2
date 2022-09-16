@@ -38,6 +38,7 @@ export interface TypeWebAppTechCard {
 }
 
 export interface TypeBlog {
+    _id: string;
     title: string;
     mainImage: string;
     body: any;
@@ -53,6 +54,7 @@ export interface TypeBlog {
         instagram: string;
         description: string;
     };
+    comments: any[];
 }
 
 export interface TypeReference {
