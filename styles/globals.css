@@ -122,3 +122,7 @@
 img {
     display: unset;
 }
+
+/* p{
+    @apply text-neutral-600;
+} */
