@@ -11,35 +11,34 @@ import { FaFacebookF, FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function BlogSinglePage({ _id, title, mainImage, body, blogCategory, blogAuthor, comments }: TypeBlog) {
     return (
         <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
-            <div className=" py-[27px] selection:bg-dark selection:text-white">
+            <div className=" py-10 selection:bg-dark selection:text-white">
                 <OpacityFramer>
-                    <div className="mx-auto bg-neutral-100 rounded-[10px] flex max-w-5xl items-center justify-center bg-cover px-3 py-4 bg-red">
+                    <div className="mx-auto bg-neutral-100 rounded-[10px] flex max-w-4xl items-center justify-center bg-cover px-3 py-4 bg-red">
                         <TopToBottomFramer>
-                            <div className="flex items-center justify-center gap-4 overflow-y-scroll lg:overflow-hidden ">
+                            <div className="flex items-center  gap-4 overflow-y-scroll lg:overflow-hidden ">
                                 {blogCategory?.map((cat: any) => (
-                                    <mark className="whitespace-nowrap rounded-full bg-dark px-4 py-1 text-white">
+                                    <mark className="whitespace-nowrap rounded-full bg-[#ffd00050] px-4 py-1 ">
                                         {cat?.name}
                                     </mark>
                                 ))}
                             </div>
 
-                            <h1 className="mt-5 text-center font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[50px] capitalize">
+                            <h1 className="mt-5 font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
                                 {title}
                             </h1>
 
                             {blogAuthor && (
-                                <div className="mt-5 flex flex-col items-center justify-center space-y-3">
+                                <div className="mt-5 flex items-center space-y-3">
                                     <Image
                                         src={urlFor(blogAuthor?.avatar).url()}
                                         width={75}
                                         height={75}
                                         className="rounded-full"
                                     />
-                                    <div className="text-center">
-                                        <mark className="whitespace-nowrap rounded-full text-[20px] bg-neutral-200 px-4 py-1">
-                                        {blogAuthor?.fullName}
-                                    </mark>
-                                        <p className="text-[18px] mt-1 font-bold text-gray-500">{blogAuthor?.jobTitle}</p>
+                                    <div className="ml-3">
+                                        
+                                    <p className="text-[24px] font-bold">{blogAuthor?.fullName}</p>
+                                        <p className="text-[16px] font-bold text-neutral-500">{blogAuthor?.jobTitle}</p>
                                     </div>
                                 </div>
                             )}
@@ -48,7 +47,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                 </OpacityFramer>
             </div>
 
-            <div className="mx-auto  max-w-5xl px-3 lg:px-0">
+            <div className="mx-auto  max-w-4xl px-3 lg:px-0">
                 <ScrollBottomToTop>
                     <div className="">
                         <Image src={urlFor(mainImage).url()} width={1024} height={620} className="rounded-[10px] object-cover" />
