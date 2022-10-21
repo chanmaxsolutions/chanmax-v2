@@ -15,7 +15,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                 <OpacityFramer>
                     <div className="mx-auto bg-neutral-100 rounded-[10px] flex max-w-5xl items-center justify-center bg-cover px-3 py-4 bg-red">
                         <TopToBottomFramer>
-                            <div className="mt-10 flex items-center justify-center gap-4 overflow-y-scroll lg:overflow-hidden ">
+                            <div className="flex items-center justify-center gap-4 overflow-y-scroll lg:overflow-hidden ">
                                 {blogCategory?.map((cat: any) => (
                                     <mark className="whitespace-nowrap rounded-full bg-dark px-4 py-1 text-white">
                                         {cat?.name}
@@ -23,7 +23,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                 ))}
                             </div>
 
-                            <h1 className="mt-5 text-center font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[60px] capitalize">
+                            <h1 className="mt-5 text-center font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[50px] capitalize">
                                 {title}
                             </h1>
 
