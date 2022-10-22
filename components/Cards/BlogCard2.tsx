@@ -7,7 +7,7 @@ import { TypeReference } from "../../typing";
 export default function BlogCard2({ coverImage, title, shortDescription, slug }: TypeReference) {
     return (
         <Link href={`/blog/${slug.current}`}>
-            <a className="rounded-[10px] bg-[#F8F8F8] hover:drop-shadow-lg">
+            <a className="rounded-[10px] bg-neutral-100 hover:drop-shadow-lg">
                 <Image src={urlFor(coverImage).url()} width={582} height={400} className="rounded-[10px] object-cover" />
                 <div className="p-3 lg:p-[50px] pt-[30px]">
                     <h2 className="font-AvenirDemi text-2xl capitalize">{title}</h2>

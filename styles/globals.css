@@ -24,6 +24,11 @@
         src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Regular.otf");
     }
 
+    @font-face {
+        font-family: "CitaProBold";
+        src: url("../public/font/Avenir_Next_Pro/CitaPro-Bold.otf");
+    }
+
     h1,
     h2,
     h3,

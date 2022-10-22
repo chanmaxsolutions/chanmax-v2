@@ -11,9 +11,9 @@ import { FaFacebookF, FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function BlogSinglePage({ _id, title, mainImage, body, blogCategory, blogAuthor, comments }: TypeBlog) {
     return (
         <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
-            <div className=" py-10 selection:bg-dark selection:text-white">
+            <div className=" lg:py-10 selection:bg-dark selection:text-white">
                 <OpacityFramer>
-                    <div className="mx-auto bg-neutral-100 rounded-[10px] flex max-w-4xl items-center justify-center bg-cover px-3 py-4 bg-red">
+                    <div className="mx-auto bg-neutral-100 rounded-0 lg:rounded-[10px] flex max-w-4xl items-center justify-center bg-cover px-3 py-4 bg-red">
                         <TopToBottomFramer>
                             <div className="flex items-center  gap-4 overflow-y-scroll lg:overflow-hidden ">
                                 {blogCategory?.map((cat: any) => (
@@ -23,7 +23,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                 ))}
                             </div>
 
-                            <h1 className="mt-5 font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
+                            <h1 className="mt-5 font-[CitaProBold] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
                                 {title}
                             </h1>
 
@@ -64,7 +64,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                     <h1 className="my-5 text-2xl font-bold leading-[1.2em]" {...props} />
                                 ),
                                 h2: (props: any) => (
-                                    <h2 className="mt-[50px] font-[Avenirdemi] capitalize text-[24px] " {...props} />
+                                    <h2 className="mt-[50px] font-[Avenirdemi] capitalize text-[20px] " {...props} />
                                 ),
                                 normal: (props: any) => <p className="mt-[10px] text-lg leading-[1.7em] text-neutral-600" {...props} />,
                                 li: ({ children }: any) => (
