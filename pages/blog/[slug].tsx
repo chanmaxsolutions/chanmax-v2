@@ -23,7 +23,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                 ))}
                             </div>
 
-                            <h1 className="mt-5 font-[CitaProBold] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
+                            <h1 className="mt-5 font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
                                 {title}
                             </h1>
 
