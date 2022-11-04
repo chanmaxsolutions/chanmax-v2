@@ -11,33 +11,34 @@ import { FaFacebookF, FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function BlogSinglePage({ _id, title, mainImage, body, blogCategory, blogAuthor, comments }: TypeBlog) {
     return (
         <MainLayout title={`Blog - ${title}`} description={`Blog - ${title}`}>
-            <div className="bg-[#F8F8F8] py-[27px] selection:bg-dark selection:text-white">
+            <div className=" lg:py-10 selection:bg-dark selection:text-white">
                 <OpacityFramer>
-                    <div className="mx-auto flex max-w-5xl items-center justify-center bg-cover px-3 py-4">
+                    <div className="mx-auto bg-neutral-100 rounded-0 lg:rounded-[10px] flex max-w-4xl items-center justify-center bg-cover px-3 py-4 bg-red">
                         <TopToBottomFramer>
-                            <div className="mt-10 flex items-center justify-center gap-4 overflow-y-scroll lg:overflow-hidden">
+                            <div className="flex items-center  gap-4 overflow-y-scroll lg:overflow-hidden ">
                                 {blogCategory?.map((cat: any) => (
-                                    <mark className="whitespace-nowrap rounded-full bg-dark px-4 py-1 text-white">
+                                    <mark className="whitespace-nowrap rounded-full bg-[#ffd00050] px-4 py-1 ">
                                         {cat?.name}
                                     </mark>
                                 ))}
                             </div>
 
-                            <h1 className="mt-10 text-center font-[AvenirBold] text-[30px] leading-[1.2em] lg:text-[50px]">
+                            <h1 className="mt-5 font-[Avenirdemi] text-[30px] leading-[1.2em] lg:text-[40px] capitalize">
                                 {title}
                             </h1>
 
                             {blogAuthor && (
-                                <div className="mt-10 flex flex-col items-center justify-center space-y-3">
+                                <div className="mt-5 flex items-center space-y-3">
                                     <Image
                                         src={urlFor(blogAuthor?.avatar).url()}
-                                        width={50}
-                                        height={50}
+                                        width={75}
+                                        height={75}
                                         className="rounded-full"
                                     />
-                                    <div className="text-center">
-                                        <h3 className="font-[AvenirBold] text-[20px]">{blogAuthor?.fullName}</h3>
-                                        <p className="text-lg font-bold text-gray-500">{blogAuthor?.jobTitle}</p>
+                                    <div className="ml-3">
+                                        
+                                    <p className="text-[24px] font-bold">{blogAuthor?.fullName}</p>
+                                        <p className="text-[16px] font-bold text-neutral-500">{blogAuthor?.jobTitle}</p>
                                     </div>
                                 </div>
                             )}
@@ -46,10 +47,10 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                 </OpacityFramer>
             </div>
 
-            <div className="mx-auto mt-[100px] max-w-5xl px-3 lg:px-0">
+            <div className="mx-auto  max-w-4xl px-3 lg:px-0">
                 <ScrollBottomToTop>
-                    <div className="mt-[50px]">
-                        <Image src={urlFor(mainImage).url()} width={1024} height={700} className="rounded-[10px]" />
+                    <div className="">
+                        <Image src={urlFor(mainImage).url()} width={1024} height={620} className="rounded-[10px] object-cover" />
                     </div>
                 </ScrollBottomToTop>
                 <div className="mx-auto max-w-3xl px-3 lg:px-0">
@@ -63,9 +64,9 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                     <h1 className="my-5 text-2xl font-bold leading-[1.2em]" {...props} />
                                 ),
                                 h2: (props: any) => (
-                                    <h2 className="mt-[50px] font-AvenirBold text-[34px] leading-[1.2em]" {...props} />
+                                    <h2 className="mt-[50px] font-[Avenirdemi] capitalize text-[20px] " {...props} />
                                 ),
-                                normal: (props: any) => <p className="mt-[30px] text-lg leading-[1.2em]" {...props} />,
+                                normal: (props: any) => <p className="mt-[10px] text-lg leading-[1.7em] text-neutral-600" {...props} />,
                                 li: ({ children }: any) => (
                                     <li className="ml-4 list-disc leading-[1.2em]">{children}</li>
                                 ),
@@ -84,7 +85,7 @@ export default function BlogSinglePage({ _id, title, mainImage, body, blogCatego
                                         src={urlFor(props).url()}
                                         width={768}
                                         height={400}
-                                        className="rounded-[10px]"
+                                        className="rounded-[10px] object-cover"
                                     />
                                 ),
                             }}

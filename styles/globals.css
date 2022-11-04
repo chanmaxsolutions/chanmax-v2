@@ -24,6 +24,8 @@
         src: url("../public/font/Avenir_Next_Pro/AvenirNextLTPro-Regular.otf");
     }
 
+    
+
     h1,
     h2,
     h3,
@@ -122,3 +124,7 @@
 img {
     display: unset;
 }
+
+/* p{
+    @apply text-neutral-600;
+} */
