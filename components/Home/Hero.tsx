@@ -28,7 +28,7 @@ export default function Hero() {
                             <ClutchBadge
                                 classNamePrefix="custom-small-clutch-badge"
                                 starsCount={5}
-                                reviewsCount={4}
+                                reviewsCount={5}
                                 variant={"bigLogo"}
                             />
                         </a>
